@@ -1,0 +1,388 @@
+/* white #E8DEDF */
+/* violet #9a4c95 */
+
+body {
+  font-family: "Carrois Gothic SC", sans-serif;
+  font-family: "Bungee", cursive;
+  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Bahiana", cursive;
+  color: #e8dedf;
+  background: url(../img/body-bcg.jpeg) center/cover fixed no-repeat;
+}
+.primary-color {
+  color: #9a4c95;
+}
+.info {
+  background: #e8dedf;
+}
+.info h2 {
+  word-spacing: 0.6rem;
+}
+.info a {
+  transition: color 0.2s ease-in-out;
+}
+.info a:hover {
+  color: #242424;
+}
+/*############ header ################*/
+
+#header {
+  min-height: calc(100vh - 94px);
+  /* OVER LAY CODE BELOW */
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url(../img/banner-bcg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative; /* this is to make it the parent container to the page scroll */
+}
+.height-90 {
+  /*THIS WOULD SET UP THE ROW TO THE SAME HEIGHT
+      AS THE HEADER */
+  min-height: calc(100vh - 94px);
+}
+.banner h1 {
+  border-top: 6px solid #f08cae;
+  border-bottom: 6px solid #f08cae;
+  /*ANIMATION*/
+  animation: fromLeft;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+@keyframes fromLeft {
+  0% {
+    transform: translateX(-100px); /*starting position of animation */
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0); /* ending position of animation */
+    opacity: 1;
+  }
+}
+.main-btn {
+  color: #f08cae;
+  font-size: 2rem;
+  border: 2px solid #e8dedf;
+  transition: all 1s ease-in-out;
+}
+.main-btn:hover {
+  color: #242424;
+  border: 2px solid #e8dedf;
+  background: #e8dedf;
+}
+.sushi-btn {
+  /*ANIMATION*/
+  animation: fromRight;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+@keyframes fromRight {
+  0% {
+    transform: translateX(100px); /* starting position of animation */
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0); /* ending position of animation */
+    opacity: 1;
+  }
+}
+.header-link {
+  display: inline-block;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  background: #e8dedf;
+  border-radius: 10px;
+  transition: all 2s ease;
+  animation: fromBottom;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.header-link:hover {
+  color: #242424;
+}
+@keyframes fromBottom {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/*################ NAVBAR #####################*/
+.navbar {
+  background: #e8dedf;
+  padding: 20px 20px;
+  transition: all 1s ease;
+}
+.navbar-background {
+  padding: 5px 20px; /* when navbar background changes to sticky header padding changes*/
+}
+.navbar-brand {
+  font-size: 30px;
+  transition: all 1s ease;
+}
+.navbar-brand:hover {
+  color: #242424;
+}
+.nav-link {
+  color: #242424;
+  text-decoration: none;
+  transition: all 2s ease;
+  font-size: 23px;
+}
+.nav-link:hover {
+  color: #9a4c95;
+}
+.nav-btn {
+  background: transparent;
+  color: #9a4c95;
+  border: 2px solid #9a4c95;
+  font-size: 23px;
+  transition: all 2s ease;
+}
+.nav-btn:hover {
+  color: #242424;
+  border: 2px solid #242424;
+  transform: rotate(10deg);
+}
+.toggler-btn {
+  border: 2px solid #9a4c95;
+  padding: 5px;
+  transition: all 2 s ease;
+}
+.bar {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  background: #9a4c95;
+  transition: all 0.5s ease; /* WE CHANGE THE AMOUNT OF TIME BECAUSE DEFAULT IS FASTER */
+}
+.change .bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: rotate(45deg) translate(-5px, -8px);
+}
+/*################ MENU ITEMS #####################*/
+
+.item-container {
+  position: relative; /* relative to outside container */
+  /* this is for the link in the center of img */
+  overflow: hidden;
+  background: linear-gradient(
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
+  ); /* black bg 4 hover effect */
+  transition: all 2s ease;
+}
+/***** this is outline effect on hover ******/
+.item-container:hover {
+  outline: 10px solid #f08cae;
+  outline-offset: -0.8rem; /* this makes the outline go to the inside of the food image because it is negative postive goes to the outside */
+}
+/***** this is a zoom in effect ******/
+.item-img {
+  transition: all 2s ease;
+}
+
+.item-container:hover .item-img {
+  transform: scale(1.2);
+  opacity: 0.5; /* this makes the img light so you can see the background */
+}
+/***** img link ctr ******/
+.item-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*this places the link in the center of img */
+  color: #f08cae;
+  font-size: 2rem;
+  border-top: 3px solid #f08cae;
+  border-bottom: 3px solid #f08cae;
+  transition: all 2s ease;
+  opacity: 0;
+}
+/***** img link ******/
+.item-container:hover .item-link {
+  opacity: 1;
+}
+/***** img link color chg ******/
+.item-link:hover {
+  color: #e8dedf;
+  border: 3px solid #e8dedf;
+  background: #e8dedf;
+  color: #242424;
+}
+/*################ MENU FOOD PRICES #####################*/
+#menu {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7) /* white overlay 4 img 4 bg */
+    ),
+    url(../img/banner-bcg.jpg) center/cover fixed no-repeat; /* img 4 bg */
+}
+.special {
+  border: 3px solid #4d2d52;
+  position: relative; /* postioning of outline inside flexbox */
+}
+.special-text {
+  position: absolute; /* postioning of background chef selection stuck in place absolute  flexbox */
+  top: 0;
+  right: 10%;
+  background: #4d2d52;
+  padding: 0 0.4rem;
+}
+.text-food {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  font-size: 25px;
+  text-transform: lowercase;
+  line-height: 1.2em;
+}
+/*################ ABOUT SECTION #####################*/
+.about-us {
+  color: #f08cae;
+}
+.about-pictures {
+  position: relative;
+}
+.the-about-us-text {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  background: rgba(255, 255, 255, 0.7);
+  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%);
+  padding: 5px;
+  /* the first and the third values control the slant of the slider */
+}
+.about-image {
+  position: absolute;
+  width: 150px;
+  transition: all 2s ease;
+  opacity: 0.9;
+}
+.img-1 {
+  left: 0%;
+  top: 0%;
+}
+.img-2 {
+  left: 20%;
+  top: 20%;
+  z-index: 10;
+}
+.img-3 {
+  left: 40%;
+  top: 45%;
+  z-index: 20;
+}
+.img-4 {
+  left: 40%;
+  top: 0%;
+}
+.img-5 {
+  left: 0%;
+  top: 45%;
+}
+.about-image:hover {
+  outline: 5px solid #9a4c95;
+  outline-offset: 0.3rem; /* outline around img */
+  transform: scale(1.5) rotate(20deg);
+  z-index: 30;
+  opacity: 1;
+}
+.about-pictures:hover .about-image:not(:hover) {
+  opacity: 0.5;
+}
+/*################ REVIEW SECTION #####################*/
+.review-img {
+  width: 120px;
+}
+.review-item {
+  background: rgba(255, 255, 255, 0.7);
+  clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+  /* the first and the third values control the slant of the slider */
+}
+/*################ TEAM SECTION #####################*/
+.team-text-capitalize {
+  color: #9a4c95;
+}
+.team-chef {
+  color: #242424;
+}
+.team-icons a {
+  color: #9a4c95;
+  transition: all 2s ease-in-out;
+}
+.team-icons a:hover {
+  color: #f08cae;
+  transform: translateY(-5px); /* moves social icon up in the air */
+}
+/*################ CONTACT SECTION #####################*/
+.height-60 {
+  min-height: 60vh; /* makes height 60% */
+}
+
+#contact .card {
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 2s ease;
+}
+#contact .card:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+#contact .card-header {
+  color: #f08cae;
+}
+#contact .input-group-text {
+  background: #f08cae;
+  border-color: #f08cae;
+  color: #242424;
+}
+#contact .card input {
+  color: #606060;
+}
+#contact .card input::placeholder {
+  color: #606060;
+}
+.contact-btn {
+  color: #f08cae;
+  border-color: #f08cae;
+  transition: all 2s ease-in-out;
+}
+.contact-btn:hover {
+  background: #e8dedf;
+  color: #242424;
+  border-color: #e8dedf;
+}
+/*################ FOOTER SECTION #####################*/
+#back-to-top {
+  background: #e8dedf;
+  border-radius: 10px;
+  display: inline-block;
+}
+.scrollTop {
+  position: fixed;
+  bottom: 70px;
+  right: 10px; /*this class is only active when scrolling ohterwise sits bottom right*/
+}
