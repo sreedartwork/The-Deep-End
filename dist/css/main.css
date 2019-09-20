@@ -30,8 +30,12 @@ body {
 #header {
   min-height: calc(100vh - 94px);
   /* OVER LAY CODE BELOW */
-  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url(../img/banner-bcg.jpg);
+  background: url(../img/banner-bcg.jpg) center/cover fixed no-repeat;
+
+  /*YOU CAN'T USE BACKGROUND: linear-gradient AND URL IMG */
+
+  /* background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url(../img/banner-bcg.jpg); */
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
